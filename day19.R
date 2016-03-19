@@ -26,12 +26,13 @@ print(length(unique(out)))
 
 ## There are three 'terminal' symbols that cannot be replaced: Y, Rn, and Ar.
 ## Rn and Ar are always generated in pairs.
-## 1 rule adds 7 characters, with 2 Y and an Ar/Rn pair
-## 8 rules add 5 characters with 1 Y and an Ar/Rn pair
-## 11 rules add 3 characters with an Ar/Rn pair
-## All other rules add 1 character
-## Ar/Rn outnumber Y, and all ways of building the terminals add same length
-## e.g., 2 Y + 4 Ar/Rn = 1*7 + 3*3 = 2*5 + 2*3 = +16
+## 1 rule adds:  2 Ys, an Ar/Rn pair, and 3 other new symbols (+7 total)
+## 8 rules add:  1 Y,  an Ar/Rn pair, and 2 other new symbols (+5 total)
+## 11 rules add: 0 Ys, an Ar/Rn pair, and 1 other new symbol  (+3 total)
+## All other rules add 1 symbol
+##
+## All ways of building a given set of terminals add the same length:
+## e.g., 2 Y + 4 Ar/Rn = 1*7 + 3*3 = 2*5 + 2*3 = +16 symbols
 ## Therefore, just count terminals & do a little arithmatic
 ## (Final -1 is because first step (e -> X) adds no symbols)
 
